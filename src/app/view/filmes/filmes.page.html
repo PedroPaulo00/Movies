@@ -1,13 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>filmes</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Busca de Filmes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">filmes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-searchbar [ngModel]="searchTerms"(ionChange)="search()">
+    <ion-item>
+      <ion-label>Seleciona o Tipo</ion-label>
+      <ion-select [(ngModel)]="type" (ionChange)="search()">
+        <ion-select-option value ="">Tudo</ion-select-option>
+        <ion-select-option value ="movie">Filmes</ion-select-option>
+        <ion-select-option value ="series">Séries</ion-select-option>
+        <ion-select-option value ="episode">Episódios</ion-select-option>
+        <ion-select-option value ="game">Games</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-searchbar>
 </ion-content>
